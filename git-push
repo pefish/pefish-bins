@@ -1,0 +1,8 @@
+git add . && git commit -m "$1"
+
+remotes=`git remote -v | awk 'substr($2,0,3)=="git" {print($1)}' | uniq`
+
+for remote in ${remotes}
+do
+   git push ${remote}
+done

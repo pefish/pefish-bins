@@ -1,0 +1,2 @@
+git-push "$1" && git checkout main && git config pull.rebase false && git merge test && git pull && git push origin main && git checkout test
+
