@@ -1,5 +1,5 @@
 sudo docker rmi $(sudo docker images | grep "^<none>" | awk "{print $3}")
 
-sudo docker rm $(sudo docker ps -a -q -f status=exited)
+sudo docker rm $(sudo docker ps -a -q -f status=exited) # sudo docker container prune -f
 
-sudo docker volume rm $(sudo docker volume ls -qf dangling=true)
+sudo docker volume rm $(sudo docker volume ls -qf dangling=true)  # sudo docker volume prune -f
