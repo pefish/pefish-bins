@@ -1,4 +1,6 @@
-sudo docker rmi $(sudo docker images | grep "^<none>" | awk "{print $3}")
+# sudo docker system prune
+
+sudo docker rmi $(sudo docker images | grep "^<none>" | awk "{print $3}") # sudo docker image prune -a -f
 
 sudo docker rm $(sudo docker ps -a -q -f status=exited) # sudo docker container prune -f
 
